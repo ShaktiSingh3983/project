@@ -1,0 +1,101 @@
+# Theater project ticket booking counter .......
+Total_Amount = 0
+Total_Seats = 150
+Normal_Seats = 125
+Reclinear_Seats = 25
+while True:
+    if Total_Seats == 0:
+        print("Opps Sorry! .. All Seats are sold out .....!!")
+        break
+        
+    elif Total_Seats <= 150:    
+        
+        print("Total Seats Available are : ",Total_Seats,"\n","Normal Seats available are : ",Normal_Seats,"\n","Reclinear Seats available are : ",Reclinear_Seats)
+        name = input("Please tell your name : ")
+        PhoneNo = int(input("Please tell your Phone Number : "))
+        choice = int(input('''Please which seats are you want :
+                              1.Normal Seat ...
+                              2.Reclinear Seat ...'''))
+        if choice == 1:
+            Combo_Price = 500
+            Price = 500
+            print("Price of Normal Seat is : ",Price)
+            S = int(input("How many seats are you want : "))
+            if S <= Normal_Seats :
+                
+                Amount = S*Price
+    #             print(Amount)
+                choice3 = input("Do you want combo ...? Yes /No ")
+                if choice3 == "YES" or choice == "Yes" or choice3=="yes":
+                    print("The combo price is = ",Combo_Price)
+                    Amount += Combo_Price
+                    Total_Seats -= S
+                    Normal_Seats -= S
+                    Total_Amount += Amount
+                    print("Customer Name : ",name ,"\n","Customer Phone No. : ",PhoneNo)
+                    print("Total Amount is : ", Amount)
+                    choice2 = input("Next Customer : Yes/No ... ")
+                    print("-"*50)
+                    if choice2 == "No" or choice2 == "no" or choice2 == "NO":
+                        print( "Thank You" )
+                        break
+                else:
+                    Total_Seats -=  S        # (Total_Seats - S)
+                    Normal_Seats -= S          #(Normal_Seats - S)
+                    Total_Amount += Amount
+                    print("Customer Name : ",name ,"\n","Customer Phone No. : ",PhoneNo)
+                    print("Total Amount is : ", Amount)
+                    choice2 = input("Next Cucstomer : Yes/No ... ")
+                    print("-"*50)
+                    if choice2 == "No" or choice2 == "no" or choice2 == "NO":
+                        break
+            elif Normal_Seats == 0:
+                print("Sorry! Seats are Sold ! ")
+                break
+
+            else:
+                print("Please Choose No of seats within No of available seats : ")
+
+
+        elif choice == 2 :
+            Combo_Price = 400
+            Price = 750
+            print("Price of Reclinear Seat is : ",Price )
+            S = int(input("How many seats are you want : "))
+            if S <= Reclinear_Seats:
+                
+                Amount = S*Price
+    #             print(Amount)
+                choice3 = input("Do you want combo ...? Yes /No ")
+                if choice3 == "YES" or choice == "Yes" or choice3=="yes":
+                    print("The combo price is = ",Combo_Price)
+                    Amount += Combo_Price
+                    Total_Seats -= S
+                    Reclinear_Seats -= S
+                    Total_Amount += Amount
+                    print("Customer Name : ",name ,"\n","Customer Phone No. : ",PhoneNo)
+                    print("Total Amount is : ", Amount)
+                    choice2 = input("Next Customer : Yes/No ... ")
+                    print("-"*50)
+                    if choice2 == "No" or choice2 == "no" or choice2 == "NO":
+                        print( "Thank You" )
+                        break
+                
+                else:
+                    Total_Seats -= S
+                    Reclinear_Seats -= S
+                    Total_Amount += Amount
+                    print("Customer Name : ",name ,"\n","Customer Phone No. : ",PhoneNo)
+                    print("Total Amount is : ", Amount)
+                    choice2 = input("Next Customer : Yes/No ... ")
+                    print("-"*50)
+                    if choice2 == "No" or choice2 == "no" or choice2 == "NO":
+                        print( "Thank You" )
+                        break
+            elif Reclinear_Seats == 0:
+                print("Sorry! Seats are Sold ! ")
+                break
+
+            else:
+                print("Please Choose No of seats within No of available seats : ")
+                break
