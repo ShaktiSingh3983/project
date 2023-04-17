@@ -10,7 +10,8 @@ while True:
                         Press 4 for view available books list...   '''))
     if choice == 1:
         a = input("Enter book name : ").lower()
-        L[a] = int(input("Enter the quantity : "))
+        b = int(input("Enter the quantity : "))
+        L[a] += b
         print(L)
     elif choice == 2:
         print("The available books are : ","\n", L)
