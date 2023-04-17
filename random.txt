@@ -1,1 +1,49 @@
+from random import*
+Your_Score = 0
+Computer_Score = 0
+i = 0
+l= ["rock","paper","scissor"]
+while i <6:
+    M = input('''Enter your choice : 
+                "rock" "paper" "scissor"   ''').lower()
+    C = choice(l)
+    if (M=="rock"and C=="rock") or(M== "scissor" and C== "scissor") or (M=="paper" and C=="paper"):
+        print(M)
+        print(" ")
+        print(C)
+        print(" ")
+        print("Game is tied")
+        print("*"*40)
+        Your_Score += 1
+        Computer_Score += 1
+        i += 1
+    elif (M== "paper" and C== "rock" ) or (M=="scissor" and C == "paper") or (M == "rock" and C == "scissor"):
+        print(M)
+        print(" ")
+        print(C)
+        print(" ")
+        print("You win this time ! ")
+        print("*"*40)
+        Your_Score += 2 
+        i += 1
+    elif (C== "paper" and M== "rock" ) or (C=="scissor" and M == "paper") or (C == "rock" and M == "scissor"):
+        print(M)
+        print(" ")
+        print(C)
+        print(" ")
+        print("Computer win this time ! ")
+        print("*"*40)
+        Computer_Score += 2
+        i += 1
 
+if Your_Score == Computer_Score :
+     print ("The Game is tied")
+elif Your_Score < Computer_Score :
+    print("Computer win this round")
+else: 
+    print ("You win this round ")
+
+print(" ")
+print("Your total score is : " ,Your_Score)
+print(" ")
+print("Computer total score is : :",Computer_Score)
