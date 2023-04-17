@@ -1,1 +1,32 @@
-
+USER_NAME = input("Enter User Name : ")
+USER_Password = input ( "Enter User Password : ")
+print("Welcome! ",USER_NAME)
+L = {"math":13,"sst":15,"fiction":25,"hindi":4 , "english":8}
+while True:
+    choice = int(input('''What Are You Want To Do ?
+                        Press 1 for add new book ....  
+                        Press 2 for lend book....   
+                        Press 3 for return book ...  
+                        Press 4 for view available books list...   '''))
+    if choice == 1:
+        a = input("Enter book name : ").lower()
+        L[a] = int(input("Enter the quantity : "))
+        print(L)
+    elif choice == 2:
+        print("The available books are : ","\n", L)
+        a = input ("Enter book name want to lend  : ").lower()
+        b= int(input("Enter the quantity : "))
+        if L[a] >= b:
+            L[a] -= b
+        elif L[a] == 0:
+            print("there is no book available  ")
+        else:
+            print("Enter valid quantity! Thankyou! ")
+    elif choice == 3:
+        a = input ("Enter book name want to return  : ").lower()
+        L[a] += int(input("Enter the quantity : "))
+    elif choice == 4:
+        print(L)
+    else:
+        print("Thankyou For visiting...." )
+        break
