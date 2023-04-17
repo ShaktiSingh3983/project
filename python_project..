@@ -3,7 +3,13 @@ Total_Amount = 0
 Total_Seats = 150
 Normal_Seats = 125
 Reclinear_Seats = 25
+Normal_Seat_Price = 500
+Reclinear_Seat_Price = 750
 while True:
+    print("The Normal_Seat_Price : ",Normal_Seat_Price)
+    print("  ")
+    print("The Reclinear_Seat_Price : ",Reclinear_Seat_Price)
+    print(" ")
     if Total_Seats == 0:
         print("Opps Sorry! .. All Seats are sold out .....!!")
         break
